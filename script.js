@@ -140,8 +140,49 @@ document.querySelectorAll('section, .problem-card, .solution-card, .step').forEa
     observer.observe(el);
 });
 
-// Formspree handles form submission automatically
-// No custom JavaScript needed - the form submits directly to Formspree
+// Web3Forms form submission handler
+const form = document.getElementById('waitlistForm');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    result.innerHTML = "Sending...";
+    result.style.color = "#6366f1";
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = "✅ Success! You're on the waitlist.";
+            result.style.color = "#10b981";
+            form.reset();
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+            result.style.color = "#ef4444";
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+        result.style.color = "#ef4444";
+    })
+    .then(function() {
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 5000);
+    });
+});
 
 
 // Add hover effect to stat boxes
