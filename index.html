@@ -224,11 +224,17 @@
                 <h2 class="waitlist-title">Join the Waitlist</h2>
                 <p class="waitlist-subtitle">Be among the first to protect your relationship equity.</p>
 
-                <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/mojneeva" method="POST">
+                <form class="waitlist-form" id="waitlistForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms configuration -->
+                    <input type="hidden" name="access_key" value="a5184b46-e7f4-401f-899b-b7037f2cad81">
+                    <input type="hidden" name="subject" value="New HIF Waitlist Signup!">
+                    <input type="hidden" name="from_name" value="HIF Landing Page">
+
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Enter your email" required>
                     </div>
                     <button type="submit" class="btn-submit">Get Early Access</button>
+                    <div id="result" style="margin-top: 1rem; font-size: 0.9rem;"></div>
                 </form>
 
                 <p class="waitlist-note">No spam. Just updates on our launch.</p>
