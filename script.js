@@ -140,35 +140,9 @@ document.querySelectorAll('section, .problem-card, .solution-card, .step').forEa
     observer.observe(el);
 });
 
-// Waitlist form handling
-const waitlistForm = document.getElementById('waitlistForm');
+// Formspree handles form submission automatically
+// No custom JavaScript needed - the form submits directly to Formspree
 
-waitlistForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const email = waitlistForm.querySelector('input[type="email"]').value;
-
-    // Simulate form submission
-    const submitBtn = waitlistForm.querySelector('.btn-submit');
-    const originalText = submitBtn.textContent;
-
-    submitBtn.textContent = 'Joining...';
-    submitBtn.disabled = true;
-
-    setTimeout(() => {
-        submitBtn.textContent = '✓ You\'re on the list!';
-        submitBtn.style.backgroundColor = '#fff';
-
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            waitlistForm.reset();
-        }, 3000);
-    }, 1500);
-
-    // In production, you would send this to your backend
-    console.log('Email submitted:', email);
-});
 
 // Add hover effect to stat boxes
 const statBoxes = document.querySelectorAll('.stat-box');
