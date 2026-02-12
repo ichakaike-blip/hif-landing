@@ -395,6 +395,7 @@ section {
    =================================== */
 .hook-section {
     background-color: var(--gray-100);
+    text-align: center;
 }
 
 .hook-content {
@@ -759,107 +760,6 @@ section {
 }
 
 /* ===================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - DISABLED
+   Desktop layout maintained on all devices
    =================================== */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-    }
-
-    .btn-nav {
-        padding: 0.5rem 1rem;
-    }
-
-    .hero {
-        padding-top: 8rem;
-    }
-
-    .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.6rem 1.2rem;
-    }
-
-    .hero-stats {
-        gap: 1rem;
-        padding: 1.5rem;
-    }
-
-    .stat-value {
-        font-size: 1.8rem;
-    }
-
-    .stat-label {
-        font-size: 0.7rem;
-    }
-
-    .stat-divider {
-        height: 40px;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-    }
-
-    .hook-content {
-        gap: 2rem;
-    }
-
-    .divider-vertical {
-        display: none;
-    }
-
-    .problem-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .solution-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-    }
-
-    .waitlist-form {
-        flex-direction: column;
-    }
-
-    .btn-submit {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    section {
-        padding: 4rem 0;
-    }
-
-    .nav-links a:not(.btn-nav) {
-        display: none;
-    }
-}
